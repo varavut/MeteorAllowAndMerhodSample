@@ -1,0 +1,24 @@
+<head>
+    <title>hello</title>
+</head>
+
+<body>
+<h1>Welcome to Meteor!</h1>
+
+{{> secure}}
+</body>
+
+<template name="hello">
+
+    {{> loginButtons}}
+
+    <ul>
+        {{#each post in posts}}
+            <li>{{post.content}} - {{post.createdAt}} - {{post.owner}}</li>
+        {{/each}}
+    </ul>
+
+    <button id="post-direct">Post (direct insert)</button>
+    <button id="post-methods">Post (using methods)</button>
+
+</template>

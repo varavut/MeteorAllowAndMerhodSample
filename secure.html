@@ -1,0 +1,19 @@
+<template name="secure">
+    {{> loginButtons}}
+
+    <ul>
+        {{#each thread in threads}}
+        <li>
+            {{thread.title}} - {{thread.createdAt}} - {{thread.owner}}
+            <button class="delete-direct" data-id="{{thread._id}}">X direct</button>
+            <button class="delete-methods" data-id="{{thread._id}}">X methods</button>
+        </li>
+        {{/each}}
+    </ul>
+
+    <button id="create-thread-direct">Create Thread (direct insert)</button>
+    <button id="create-thread-direct-with-fake-user-id">Create Thread (direct insert with fake user id)</button>
+    <button id="create-thread-direct-with-deletedat">Create Thread (direct insert with deletedAt)</button>
+    <button id="create-thread-methods">Create Thread (using methods)</button>
+
+</template>
